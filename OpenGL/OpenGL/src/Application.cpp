@@ -11,7 +11,9 @@
 #include "Texture.h"
 #include "Renderer.h"
 
+#include "tests/Test.h"
 #include "tests/TestClearColor.h"
+#include "tests/TestMenu.h"
 
 #include "stb_image/stb_image.h"
 
@@ -21,7 +23,7 @@
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw_gl3.h"
 
-int main(void)
+int main(int argc, char *argv[], char *envp[])
 {
 	GLFWwindow* window;
 
@@ -33,6 +35,12 @@ int main(void)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+
+	#ifdef DEBUG
+		glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
+	#else
+		glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_FALSE);
+	#endif
 
 	const int width = 960;
 	const int height = 540;
