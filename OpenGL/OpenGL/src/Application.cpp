@@ -9,7 +9,9 @@
 #include "VertexArray.h"
 #include "VertexBufferLayout.h"
 #include "Texture.h"
+#include "Window.h"
 #include "Renderer.h"
+
 
 #include "tests/Test.h"
 #include "tests/TestClearColor.h"
@@ -25,7 +27,7 @@
 
 int main(int argc, char *argv[], char *envp[])
 {
-	GLFWwindow* window;
+	GLFWwindow* window; 
 
 	/* Initialize the library */
 	if (!glfwInit())
@@ -42,9 +44,9 @@ int main(int argc, char *argv[], char *envp[])
 		glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_FALSE);
 	#endif
 
-	const int width = 960;
-	const int height = 540;
-	const std::string title = "Hello World";
+	const int& width = 960;
+	const int& height = 540;
+	const std::string& title = "Hello World";
 
 	const double scale = 2;
 	/* Create a windowed mode window and its OpenGL context */
